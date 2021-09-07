@@ -78,38 +78,6 @@ public:
         }
     }
     
-    void crop(int x1, int y1, int x2, int y2)
-    {
-        int H2 = y2-y1;
-        int W2 = x2-x1;
-        vector < vector < vector<int > > > image2(y2-y1+1, vector<vector<int>>
-                (x2-x1+1, vector<int> (D, 0)));
-        
-        for (size_t i = 0; i < H2 + 1; ++i){
-            for (size_t j=0; j < W2 + 1; ++j){
-                for (size_t t = 0; t < D; ++t){
-                    image2[i][j][t] = image[y1+i][x1+j][t];
-                }
-            }
-        }
-        H = H2 + 1;
-        W = W2 + 1;
-        image = image2;
-    }
-
-
-
-    int height(){
-        return H;
-    }
-
-    int width(){
-        return W;
-    }
-
-    int depth(){
-        return D;
-    }
 
     Image(Image& other){ H = other.height(); W = other.width(); D = other.depth();
         image = other.image;
