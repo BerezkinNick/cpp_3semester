@@ -145,7 +145,7 @@ int main(){
     cout << "crop:"<<endl;
     Nimg.crop(2,2,10,9);
     Nimg.print();
-    cout << "depth: "<<Nimg.depth() << endl;
+    cout << "height: "<<Nimg.height() << endl;
     cout << "width: "<<Nimg.width() << endl;
     cout <<"_______________________________________________________________________________________________________________________"<<endl;
     cout << "to_gs: "<<endl;
