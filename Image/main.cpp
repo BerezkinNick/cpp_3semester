@@ -29,6 +29,27 @@ public:
     Image(int W, int H, int D){
         vector<vector<vector<int>>> image(H, vector<vector<int>> (W, vector<int> (D, 0)));
     }
+    
+        int height(){
+        return H;
+    }
+
+    int width(){
+        return W;
+    }
+
+    int depth(){
+        return D;
+    }
+
+    Image(Image& other){ H = other.height(); W = other.width(); D = other.depth();
+        image = other.image;
+    }
+    
+    int at(int x, int y, int d){
+            return image[y][x][d];
+    }
+
 
 };
 
