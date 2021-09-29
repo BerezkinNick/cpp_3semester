@@ -195,6 +195,10 @@ public:
     static State* CreateCWGA(std::vector<SegmentState> cont, std::vector<DiscreteState> adds, std::vector<DiscreteState> gaps) {
         return new CWGA(cont, adds, gaps);
     }
+    
+        static void del(State* ptr) {
+        delete ptr;
+    }
 
 };
 
@@ -540,6 +544,11 @@ int main(int argc, const char * argv[]) {
         out << i << ' ' << tester(E) << std::endl;
     }
     out.close();
+    
+    CreateState::del(U);
+    CreateState::del(I);
+    CreateState::del(C);
+    CreateState::del(E);
 
     return 0;
 }
