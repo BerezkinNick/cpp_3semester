@@ -26,11 +26,6 @@ public:
         }
     }
 
-    Image(): Image(0, 0, 0){}
-    Image(int W, int H, int D){
-        vector<vector<vector<int>>> image(H, vector<vector<int>> (W, vector<int> (D, 0)));
-    }
-
     int height(){
         return H;
     }
@@ -130,18 +125,13 @@ int main(){
             }
         }
     }
-
     Image img(a, w, h, d);
     cout << "at: "<<img.at(10,10,1) << endl;
     cout << "heignt: " << img.height() << endl;
     cout << "depth: " << img.depth() << endl;
     cout << "width: " << img.width() << endl;
     cout << "_______________________________________________________________________________________________________________________"<<endl;
-    cout << "print:"<<endl;
-    img.print();
-    cout << "_______________________________________________________________________________________________________________________"<<endl;
     Image Nimg = img;
-    cout << "_______________________________________________________________________________________________________________________"<<endl;
     cout << "crop:"<<endl;
     Nimg.crop(2,2,10,9);
     Nimg.print();
@@ -152,6 +142,5 @@ int main(){
     Nimg.to_gs();
     Nimg.print();
     cout <<"depth: "<< Nimg.depth()<<endl;
-
     return 0;
 }
